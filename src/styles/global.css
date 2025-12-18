@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+    /* Playful Color Palette */
+    --color-cup-yellow: #FFD93D;
+    --color-cup-red: #FF6B6B;
+    --color-cup-blue: #4D96FF;
+    --color-cup-green: #6BCB77;
+    --color-kid-bg: #FFF9F0; /* Soft warm white */
+    --color-kid-text: #4A3A3A;
+
+    /* Fun Rounded Styling */
+    --radius-xl: 1.5rem;
+    --radius-2xl: 2.5rem;
+}
+
+@layer base {
+    body {
+        @apply bg-kid-bg text-kid-text font-sans;
+    }
+}
+
+/* Wavy Divider Helper */
+.wave-container {
+    position: relative;
+    height: 60px;
+    width: 100%;
+    background: transparent;
+    margin-top: -1px; /* Prevents tiny gaps */
+}
