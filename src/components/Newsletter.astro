@@ -3,16 +3,58 @@
         <h2 class="text-4xl font-black mb-4">Trete der Kiko-Community bei!</h2>
         <p class="text-lg mb-8">Wir starten bald. Melde dich an und erhalte regelmäßig Updates und vielleicht auch eine <strong>kostenlose Test-Version</strong> vor Start!</p>
 
-        <form class="flex flex-col gap-4">
+        <form id="kiko-newsletter" class="flex flex-col gap-4">
             <input
+                    id="email-field"
+                    name="email"
                     type="email"
+                    required
                     placeholder="E-Mail-Adresse"
                     class="p-4 rounded-2xl border-none focus:ring-4 ring-cup-red text-lg shadow-inner"
             />
-            <button class="p-4 bg-cup-red text-white text-xl font-black rounded-2xl hover:bg-red-600 transition shadow-lg">
+            <button id="submit-btn" class="p-4 bg-cup-red text-white text-xl font-black rounded-2xl hover:bg-red-600 transition shadow-lg disabled:opacity-50 disabled:cursor-not-allowed">
                 Lass uns kochen! 🍝
             </button>
         </form>
+        <p id="response-msg" class="mt-4 text-sm font-bold hidden"></p>
         <p class="mt-4 text-sm opacity-70 italic">Kein Spam, nur leckere Inspirationen.</p>
     </div>
 </section>
+
+<script>
+    import { supabase } from '../lib/supabase'; // Adjust path if needed
+
+    const form = document.getElementById('kiko-newsletter') as HTMLFormElement;
+    const btn = document.getElementById('submit-btn') as HTMLButtonElement;
+    const msg = document.getElementById('response-msg');
+
+    form?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // UI feedback: Start loading
+        btn.disabled = true;
+        btn.innerText = "Wird gesendet...";
+        msg?.classList.add('hidden');
+
+        const formData = new FormData(form);
+        const email = formData.get('email');
+
+        const { error } = await supabase
+            .from('subscribers')
+            .insert([{ email }]);
+
+        if (error) {
+            msg!.innerText = "Hoppla! Etwas ging schief. Versuche es nochmal.";
+            msg!.classList.remove('hidden', 'text-green-600');
+            msg!.classList.add('text-red-600');
+            btn.disabled = false;
+            btn.innerText = "Lass uns kochen! 🍝";
+        } else {
+            msg!.innerText = "Erfolgreich angemeldet! Willkommen im Team. ❤️";
+            msg!.classList.remove('hidden', 'text-red-600');
+            msg!.classList.add('text-green-600');
+            form.reset();
+            btn.innerText = "Danke! ❤️";
+        }
+    });
+</script>
