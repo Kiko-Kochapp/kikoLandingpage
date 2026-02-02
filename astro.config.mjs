@@ -8,7 +8,7 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://stjpaa.github.io/kikoLandingpage',
-  base: '/',
+  base: '/kikoLandingpage',
 
   vite: {
     plugins: [tailwindcss()]

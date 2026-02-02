@@ -2,6 +2,7 @@
 // src/layouts/MainLayout.astro
 import '../styles/global.css';
 import Footer from "../components/Footer.astro";
+import CookieBanner from "./CookieBanner.astro";
 
 interface Props {
     title?: string;
@@ -24,6 +25,8 @@ const {
 </head>
 
 <body class="selection:bg-cup-yellow">
-<slot /> <Footer />
+    <slot />
+    <Footer />
+    <CookieBanner />
 </body>
 </html>
