@@ -1,0 +1,29 @@
+---
+// src/layouts/MainLayout.astro
+import '../styles/global.css';
+import Footer from "../components/Footer.astro";
+
+interface Props {
+    title?: string;
+    description?: string;
+}
+
+const {
+    title = "Kiko | Die intuitive Koch-App für Kinder",
+    description = "Schritt-für-Schritt-Kochen mit Bildern und Videos. Kurz und knapp, für Kinder gemacht!"
+} = Astro.props;
+---
+
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+
+<body class="selection:bg-cup-yellow">
+<slot /> <Footer />
+</body>
+</html>

@@ -1,0 +1,49 @@
+---
+import Layout from "../../components/Layout.astro";
+---
+
+<Layout title="Datenschutz | Kiko">
+    <main class="max-w-3xl mx-auto py-20 px-6 text-gray-800">
+        <a href="/" class="text-cup-blue font-bold hover:underline inline-flex items-center gap-2 mb-10 transition-transform hover:-translate-x-1">
+            <span>←</span> Zurück zur Startseite
+        </a>
+
+        <h1 class="text-4xl md:text-5xl font-black mb-10 text-cup-blue leading-tight">
+            Datenschutz <span class="text-cup-red">🛡️</span>
+        </h1>
+
+        <div class="space-y-8 leading-relaxed">
+            <section>
+                <h2 class="text-2xl font-black mb-4">1. Datenschutz auf einen Blick</h2>
+                <p>
+                    Wir freuen uns über dein Interesse an Kiko. Der Schutz deiner Privatsphäre ist uns besonders wichtig. Wir nutzen <strong>keine Analyse-Tools</strong> (wie Google Analytics) und setzen <strong>keine Tracking-Cookies</strong>. Deine Daten werden nur verarbeitet, wenn du sie uns explizit (z.B. beim Newsletter) mitteilst.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-black mb-4">3. Bereitstellung der Website (Hetzner)</h2>
+                <p>
+                    Diese Website wird bei der <strong>Hetzner Online GmbH</strong> (Industriestr. 25, 91710 Gunzenhausen) gehostet. Der Hoster erhebt automatisch Informationen in Server-Log-Dateien (IP-Adresse, Browsertyp, Zeitpunkt). Dies ist technisch notwendig, um die Website sicher anzuzeigen (Art. 6 Abs. 1 lit. f DSGVO).
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-black mb-4">3. Newsletter & Supabase</h2>
+                <p>
+                    Wenn du dich für unseren Newsletter anmeldest, speichern wir deinen Namen und deine E-Mail-Adresse in einer Datenbank bei <strong>Supabase</strong>.
+                </p>
+                <ul class="list-disc ml-6 mt-2 space-y-2">
+                    <li><strong>Zweck:</strong> Benachrichtigung über den App-Start und Updates.</li>
+                    <li><strong>Speicherdauer:</strong> Bis du dich vom Newsletter abmeldest.</li>
+                    <li><strong>Widerruf:</strong> Du kannst deine Einwilligung jederzeit per E-Mail oder über den Link in den E-Mails widerrufen.</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+</Layout>
+
+<style>
+    p {
+        margin-bottom: 1rem;
+    }
+</style>
