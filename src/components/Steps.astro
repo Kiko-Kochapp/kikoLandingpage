@@ -1,4 +1,12 @@
-<section class="py-20 px-6 bg-white">
+---
+interface Props {
+    backgroundColor: string;
+}
+
+const { backgroundColor } = Astro.props;
+---
+
+<section class="py-20 px-6" style={`background-color: ${backgroundColor};`}>
     <div class="max-w-5xl mx-auto text-center">
         <h2 class="text-4xl font-black mb-12 text-cup-red">Einfach wie 1-2-3!</h2>
 

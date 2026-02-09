@@ -1,7 +1,13 @@
 ---
 // src/components/Hero.astro
+
+interface Props {
+    backgroundColor: string;
+}
+
+const { backgroundColor } = Astro.props;
 ---
-<header class="pt-20 pb-10 px-6 text-center bg-cup-yellow/20">
+<header class="pt-20 pb-10 px-6 text-center" style={`background-color: ${backgroundColor};`}>
     <div class="max-w-4xl mx-auto">
         <h1 class="text-5xl md:text-7xl font-black text-kid-text mb-6 leading-tight">
             Kochen ist ein <span class="text-cup-red">Kinderspiel!</span>

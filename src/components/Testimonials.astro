@@ -1,5 +1,14 @@
-<section class="py-20 px-6 bg-cup-blue/10">
-    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+---
+interface Props {
+    backgroundColor: string;
+}
+
+const { backgroundColor } = Astro.props;
+---
+
+
+<section class="py-20 px-6" style={`background-color: ${backgroundColor};`}>
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <div>
             <h2 class="text-4xl font-black mb-6">Warum Eltern uns lieben ❤️</h2>
             <ul class="space-y-4">
